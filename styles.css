@@ -395,3 +395,399 @@ label {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== 视图切换 ===== */
+.view-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tab {
+  padding: 9px 20px;
+  font-weight: 800;
+  border-radius: 999px;
+}
+
+.tab.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+/* ===== 抽问台 ===== */
+.quiz-view {
+  display: grid;
+  gap: 14px;
+}
+
+.quiz-topbar {
+  margin-bottom: 0;
+}
+
+.quiz-toolbar {
+  display: flex;
+  align-items: end;
+  gap: 10px;
+}
+
+.quiz-players {
+  min-width: 110px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+.quiz-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.status-pill {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(251, 251, 248, 0.94);
+  box-shadow: var(--shadow);
+  padding: 7px 13px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.status-pill.ok {
+  color: var(--green);
+}
+
+.status-pill.bad {
+  color: var(--red);
+}
+
+.status-pill.done {
+  color: var(--lavender);
+  border-color: var(--lavender);
+}
+
+.quiz-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.quiz-panel {
+  display: grid;
+  gap: 10px;
+}
+
+.quiz-rule-note {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.quiz-empty {
+  justify-items: center;
+  text-align: center;
+}
+
+.game-chips {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.game-chips li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 9px 11px;
+  font-weight: 700;
+}
+
+.game-chips li.unfit {
+  opacity: 0.55;
+}
+
+.chip-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chip-score {
+  font-weight: 900;
+  color: var(--green);
+}
+
+.mini-pill {
+  border-radius: 999px;
+  background: rgba(104, 112, 121, 0.1);
+  color: var(--muted);
+  padding: 4px 9px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.mini-pill.fit {
+  background: rgba(57, 116, 91, 0.12);
+  color: var(--green);
+}
+
+/* 翻卡 */
+.card-grid {
+  grid-template-columns: minmax(0, 1.7fr) minmax(280px, 1fr);
+}
+
+.card-panel {
+  gap: 12px;
+}
+
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.flashcard {
+  perspective: 1200px;
+  min-height: 280px;
+  position: relative;
+}
+
+.flashcard.flipped .flash-front {
+  transform: rotateY(180deg);
+}
+
+.flashcard.flipped .flash-back {
+  transform: rotateY(0deg);
+}
+
+.flash-face {
+  backface-visibility: hidden;
+  transition: transform 0.45s ease;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  min-height: 280px;
+  padding: 26px;
+  display: grid;
+  gap: 16px;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+  background:
+    linear-gradient(150deg, rgba(49, 95, 134, 0.07), rgba(213, 162, 61, 0.08)),
+    #fff;
+}
+
+.flash-front {
+  position: relative;
+}
+
+.flash-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+  background:
+    linear-gradient(150deg, rgba(57, 116, 91, 0.08), rgba(116, 100, 155, 0.08)),
+    #fff;
+}
+
+.flash-prompt {
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.flash-answer {
+  font-size: 19px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.grade-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.grade-row button {
+  flex: 1;
+}
+
+.correct-btn {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+.wrong-btn {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+}
+
+/* 进度 */
+.dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #dfe3e7;
+  border: 1px solid var(--line);
+}
+
+.dot.done {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.dot.current {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  box-shadow: 0 0 0 3px rgba(213, 162, 61, 0.25);
+}
+
+.round-stats {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.round-stats li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eef0f2;
+  padding-bottom: 7px;
+}
+
+.round-stats span {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.game-chips.compact li {
+  padding: 7px 9px;
+  font-size: 13px;
+}
+
+/* 成绩 */
+.result-panel {
+  justify-items: stretch;
+}
+
+.result-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.result-stats div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 12px;
+  text-align: center;
+}
+
+.result-stats span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.result-stats strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 22px;
+}
+
+.result-games {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.result-games li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 9px 11px;
+  font-weight: 700;
+}
+
+/* 历史 */
+.history-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.history-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 9px 11px;
+}
+
+.history-list li div {
+  display: grid;
+  gap: 2px;
+}
+
+.history-list strong {
+  font-size: 14px;
+}
+
+.history-list span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@media (max-width: 1160px) {
+  .quiz-grid,
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .result-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grade-row {
+    flex-direction: column;
+  }
+}

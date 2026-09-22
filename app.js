@@ -51,6 +51,7 @@ const defaultState = {
 
 let state = loadState();
 if (!state.selectedId) state.selectedId = state.games[0]?.id || "";
+window.__boardgameState__ = state; // 供抽问台读取收藏，规则快照由抽问台开局时自行处理
 
 const els = {
   searchInput: document.querySelector("#searchInput"),
